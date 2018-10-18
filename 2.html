@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{background-color:#dbdee1;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;}
+  
+ .bot-position{
+  right: 0;  
+  bottom: 0;
+  position: absolute;
+  }
+  .center {  
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:  280px;
+	 }
+.logo-related
+{
+ cursor: pointer;
+ }
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+</head>
+<body>
+<img class="logo-related" id="button" href='#' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAyCAYAAADImlLUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODA1OTZERDhENTVCMTFFNTlCNzdBM0ZGMzhGODMxNDUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODA1OTZERDlENTVCMTFFNTlCNzdBM0ZGMzhGODMxNDUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4MDU5NkRENkQ1NUIxMUU1OUI3N0EzRkYzOEY4MzE0NSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4MDU5NkREN0Q1NUIxMUU1OUI3N0EzRkYzOEY4MzE0NSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pvzr+BkAAAbKSURBVHja7FlbbFRF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">
+
+
+
+<div id="dBot" class="bot-position">
+
+  <iframe id="chat" style="width: 400px; height: 400px;" src='https://webchat.botframework.com/embed/RadianMIBot?t=d8lfSVrP1NY.cwA.CD4.F1RdUdVXB9CHeC22zmI1buNVtwU5lgQk2_ZDbQpuarQ'></iframe>
+
+  </div>
+<script type="text/javascript">  
+      function openBot() 
+	  {
+       document.getElementById("dBot").style.display = "block";/*inline*/
+      }
+      function closeBot() 
+	  {
+       document.getElementById("dBot").style.display = "none";
+      }	  
+</script>
+<script>
+$(function() {
+    $( "#button" ).click(function() {
+        $( "#dBot" ).toggle();
+    });
+});
+</script>
+  </body>
+<script>
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', "https://webchat.botframework.com/api/tokens", true);
+    xhr.setRequestHeader('Authorization', 'BotConnector ' + 'd8lfSVrP1NY.cwA.CD4.F1RdUdVXB9CHeC22zmI1buNVtwU5lgQk2_ZDbQpuarQ');
+    xhr.send();
+    xhr.onreadystatechange = processRequest;
+
+    function processRequest(e) {
+      if (xhr.readyState == 4  && xhr.status == 200) {
+        var response = JSON.parse(xhr.r);
+		window.alert(repsonse+'txt');
+		
+        document.getElementById("chat").src="https://webchat.botframework.com/embed/RadianMIBot?t="+response
+      }
+    }
+
+  </script>
+  
+  
+</html>
